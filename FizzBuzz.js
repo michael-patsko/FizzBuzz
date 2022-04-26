@@ -1,8 +1,16 @@
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 200; i++) {
     let output = "";
     if (i%3 === 0) output = output.concat("Fizz");
     if (i%5 === 0) output = output.concat("Buzz");    
     if (i%7 === 0) output = output.concat("Bang"); 
-    if (i%11 ===0) output = "Bong";
+    if (i%11 === 0) output = "Bong";
+    if (i%13 === 0) {
+        tempIndex = output.search("B");
+        if (tempIndex === -1) {
+            output += "Fezz";
+        } else {
+        output = output.slice(0, tempIndex) + "Fezz" + output.slice(tempIndex);
+        }
+    }
     output === "" ? console.log(i) : console.log(output);
 }
