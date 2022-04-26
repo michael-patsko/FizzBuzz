@@ -1,4 +1,11 @@
-for (let i = 1; i <= 256; i++) {
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  
+  readline.question('Please choose a number: ', num => {
+
+for (let i = 1; i <= num; i++) {
     let output = "";
     if (i%3 === 0) output = output.concat("Fizz");
     if (i%5 === 0) output = output.concat("Buzz");    
@@ -16,4 +23,7 @@ for (let i = 1; i <= 256; i++) {
         output = ((output.split(/(?=[A-Z])/)).reverse()).join('');
     }
     output === "" ? console.log(i) : console.log(output);
-}
+}    
+
+readline.close();
+});
