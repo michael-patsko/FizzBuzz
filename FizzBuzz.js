@@ -1,4 +1,4 @@
-for (let i = 1; i <= 200; i++) {
+for (let i = 1; i <= 256; i++) {
     let output = "";
     if (i%3 === 0) output = output.concat("Fizz");
     if (i%5 === 0) output = output.concat("Buzz");    
@@ -11,6 +11,9 @@ for (let i = 1; i <= 200; i++) {
         } else {
         output = output.slice(0, tempIndex) + "Fezz" + output.slice(tempIndex);
         }
+    }
+    if (i%17 === 0) {
+        output = ((output.split(/(?=[A-Z])/)).reverse()).join('');
     }
     output === "" ? console.log(i) : console.log(output);
 }
